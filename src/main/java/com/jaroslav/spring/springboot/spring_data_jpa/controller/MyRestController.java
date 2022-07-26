@@ -23,6 +23,11 @@ public class MyRestController {
         Employee employee = employeeService.getEmployee(id);
        return employee;
     }
+    @GetMapping("/employees/name/{name}")
+    public List<Employee> getEmployeeByName(@PathVariable String name) {
+        List<Employee> employeeList = employeeService.getEmployeeByName(name);
+       return employeeList;
+    }
 
     @PostMapping("/employees")
     public Employee addNewEmployee(@RequestBody Employee employee) {
